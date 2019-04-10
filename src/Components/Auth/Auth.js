@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import logo from './images/logo.png';
+import "./Auth.css";
+
 
 
 
@@ -8,28 +11,39 @@ class Auth extends Component {
 
 render(){
     return(
-        <div>
+        <div className="auth">
             <div className="logo">
-               <img  />
+               <img 
+               className="img"
+               src={logo} 
+               alt="logo" />
             </div>
            
             <div className="title"> 
-                <h1>Helo</h1>
+                <h1 className="page-title">Helo</h1>
             </div>
 
              <div className="username">
-                 <p>Username:</p>
-                 <input />
+                 <p className="username-title">Username:</p>
+                 <input 
+                 className="username-input"
+                 />
              </div>
 
             <div className="password">
-                <p>Password:</p> 
-                <input />
+                <p className="password-title">Password:</p> 
+                <input 
+                className="password-input"
+                />
             </div>
 
             <div className="buttons">
-                <button>Login</button>
-                <button>Register</button>
+                <button
+                className="login-btn"
+                >Login</button>
+                <button
+                className="register-btn"
+                >Register</button>
             </div>
 
 

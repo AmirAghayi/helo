@@ -1,0 +1,93 @@
+.auth{
+    background-image: linear-gradient(to right, rgb(235, 95, 149) , yellow);
+    margin-top: 10%;
+    margin-bottom: 0%;
+    margin-right: 30%;
+    margin-left: 30%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-style: outset;
+    border-color: transparent;
+    border-radius: 10px;
+}
+
+.page-title{
+    font-size: 100px;
+    margin: 0%;
+    padding: 0%;
+    color: aliceblue;
+}
+
+
+
+.username{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.username-title{
+    margin-left: 10%;
+    color: aliceblue;
+}
+
+.username-input{
+    margin-top: 1.5%;
+    margin-right: 20%;
+    margin-left: 5%;
+    width: 400px;
+    height: 30px;
+}
+
+
+
+.password{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.password-title{
+    margin-left: 10%;
+    color: aliceblue;
+}
+
+
+.password-input{
+    margin-top: 1.5%;
+    margin-right: 20%;
+    margin-left: 6%;
+    width: 279px;
+    height: 30px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.login-btn{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 30%;
+    color: white;
+    background-color: black;
+    border: 0;
+    border-style: outset;
+    padding: 2%;
+}
+
+.register-btn{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-right: 30%;
+    margin-left: 20%;
+    color: white;
+    background-color: black;
+    border: 0;
+    border-style: outset;
+    padding: 2%;
+}

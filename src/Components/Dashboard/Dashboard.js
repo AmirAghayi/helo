@@ -9,7 +9,7 @@ class Dashboard extends Component {
 render(){
     return(
         <div className="dashboard-navbar">
-            <div className="img">
+            {/* <div className="img">
                      <img   />
             </div>
              
@@ -25,7 +25,7 @@ render(){
 
            <div className="logout-image">
                   <img  />
-           </div>
+           </div> */}
 
 
 
