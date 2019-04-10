@@ -77,17 +77,17 @@
     background-color: black;
     border: 0;
     border-style: outset;
-    padding: 2%;
+    padding: 2% 6% 2% 6%;
 }
 
 .register-btn{
     margin-top: 5%;
     margin-bottom: 5%;
     margin-right: 30%;
-    margin-left: 20%;
+    margin-left: 10%;
     color: white;
     background-color: black;
     border: 0;
     border-style: outset;
-    padding: 2%;
+    padding: 2% 6% 2% 6%;
 }
