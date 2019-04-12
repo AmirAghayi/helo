@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './images/logo.png';
+import { Link } from 'react-router-dom';
 import "./Auth.css";
 
 
@@ -38,12 +39,22 @@ render(){
             </div>
 
             <div className="buttons">
-                <button
+                <Link 
                 className="login-btn"
-                >Login</button>
-                <button
+                to="/Dashboard">
+                    <button
+                    className="login-btn"
+                    >Login</button>
+                </Link>
+                
+                <Link
                 className="register-btn"
-                >Register</button>
+                >
+                    <button
+                    className="register-btn"
+                    >Register</button>
+                </Link>
+                
             </div>
 
 

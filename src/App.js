@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import Auth from './Components/Auth/Auth';
 import './App.css';
+import routes from './routes';
+import { HashRouter } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-         <Auth />
+         <HashRouter>
+           {routes}
+         </HashRouter>
          
       </div>
     );
