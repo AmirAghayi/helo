@@ -1,3 +1,38 @@
-.nav-profile-pic{
-    background-image: url(&quot;https://robohash.org/&quot);
+
+.dashboard-navbar{
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+
+
+
+
+
+.profile{
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+
+.dashboard-home-nav{
+    height: 50px;
+    margin-top: 100px;
+}
+
+
+
+.newpost-nav{
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+
+
+
+.logout-nav{
+    height: 50px;
+    margin-top: 350px;
 }
