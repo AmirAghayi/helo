@@ -1,8 +1,11 @@
 
 .dashboard-navbar{
+    background-image: linear-gradient(to right, rgb(235, 95, 149) , yellow);
     display: flex;
     flex-direction: column;
     float: left;
+    height: 740px;
+    box-shadow: 10px 10px 100px 10px;
 }
 
 
@@ -13,12 +16,19 @@
     height: 100px;
     margin-top: 20px;
     margin-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
 }
 
+.user-name{
+    color: aliceblue;
+    margin-left: 20%;
+}
 
 .dashboard-home-nav{
     height: 50px;
     margin-top: 100px;
+    padding-left: 30px;
 }
 
 
@@ -27,6 +37,7 @@
     height: 50px;
     margin-left: 10px;
     margin-top: 20px;
+    padding-left: 24px;
 }
 
 
@@ -34,5 +45,6 @@
 
 .logout-nav{
     height: 50px;
-    margin-top: 350px;
+    margin-top: 150%;
+    padding-left: 30px;
 }

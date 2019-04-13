@@ -24,6 +24,9 @@ render(){
                      />
             </div>
              
+            <div className="username">
+                <p className="user-name">username</p>
+            </div>
 
             <div className='img-2'> 
                 <Link to="/Dashboard">

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
+import './Dashboard.css';
 
 
 
@@ -9,9 +10,9 @@ class Dashboard extends Component {
 
 render(){
     return(
-        <div className="dashboard-navbar">
+        <div className="dashboard">
         
-           <Nav /> 
+           <Nav className="nav"/> 
 
 
 
