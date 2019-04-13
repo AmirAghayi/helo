@@ -1,11 +1,19 @@
 .form{
     display: flex;
     justify-content: space-between;
-    width: 500px;
 }
 
 
 .form-section{
     display: flex;
     flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 100px 0px 100px;
+    margin: 100px 100px 100px 0px;
+    width: 800px;
+    border-style: solid;
+    box-shadow: 10px 20px 50px 5px grey;
+    border-color: white;
 }
