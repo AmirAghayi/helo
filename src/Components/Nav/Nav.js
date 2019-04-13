@@ -41,7 +41,7 @@ render(){
 
 
             <div className="img-3">
-                <Link to="/Form">
+                <Link to="/new">
                     <img 
                     className="newpost-nav"
                     src={newpost}
