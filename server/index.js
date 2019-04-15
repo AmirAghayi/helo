@@ -18,6 +18,9 @@ let{
 } = process.env;
 
 
+
+
+
 massive(DB_CONNECTION_STRING, {scripts: __dirname + '/db'})
 .then((dbInstance) => {
     app.set('db', dbInstance)
@@ -25,6 +28,11 @@ massive(DB_CONNECTION_STRING, {scripts: __dirname + '/db'})
     console.log(err)
 })
 
+
+
+
+
+app.post('/api/register', controller.newUser)
 
 
 
