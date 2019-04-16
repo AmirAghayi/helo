@@ -9,7 +9,7 @@ class Post extends Component {
 render(){
     return(
         <div>
-            Post
+            {this.props.mappedPostsList}
         </div>
     );
 
