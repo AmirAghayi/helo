@@ -34,7 +34,7 @@ getposts = () => {
 
 
 render(){
-    const mappedpostslist = this.state.postsList.map((post, i)=> {
+    const mappedPostsList = this.state.postsList.map((post, i)=> {
         return (
            <Post
            key={post.id}
@@ -47,7 +47,7 @@ render(){
         
            <Nav className="nav"/> 
 
-
+           
 
 
         </div>

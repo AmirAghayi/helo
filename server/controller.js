@@ -1,4 +1,17 @@
 module.exports = {
+
+    getPosts: () => {
+       const {title, imageUrl, content } = req.body;
+       const db = req.app.get('db')
+
+       db.get_posts([title,imageUrl,content])
+       .then( response => {
+         res.status(200).send('Got All Posts');
+       }).catch(err => {
+           console.log('getPosts', err)
+       });
+    },
+    
     newUser: (req,res) => {
         console.log(req.body)
         const {username,password} = req.body;
@@ -9,7 +22,7 @@ module.exports = {
             res.status(200).send('All Good');
         }).catch(err => {
             console.log('newUser', err)
-        })
+        });
     },
 
     newPost: (req,res) => {

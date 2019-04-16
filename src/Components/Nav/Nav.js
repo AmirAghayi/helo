@@ -10,7 +10,7 @@ import '../Nav/Nav.css';
 
 export default function Nav (props) {
     
-    console.log(props.username)
+    
 
     return(
         

@@ -33,6 +33,8 @@ massive(DB_CONNECTION_STRING, {scripts: __dirname + '/db'})
 
 
 app.post('/api/register', controller.newUser)
+app.post('/api/post', controller.newPost)
+app.get('/api/posts', controller.getPosts)
 
 
 
