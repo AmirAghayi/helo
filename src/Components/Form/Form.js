@@ -1,8 +1,59 @@
 import React, { Component } from "react";
 import Nav from "../Nav/Nav";
+import { Link } from 'react-router-dom';
 import './Form.css';
+import axios from "axios";
 
 class Form extends Component {
+       constructor(){
+         super();
+
+         this.state = {
+           title: "",
+           imageUrl: "",
+           content: ""
+         };
+       }
+
+
+
+handleTitleChange = (event) => {
+     this.setState({
+       title: event.target.value
+     });
+}
+
+
+handleUrlChange = (event) => {
+  this.setState({
+    imageUrl: event.target.value
+  });
+}
+
+
+handleContentChange = (event) => {
+  this.setState({
+    content: event.target.value
+  });
+}
+
+
+
+  createPost = () => {
+    const { title, imageUrl, content } = this.state;
+    const POST = { title, imageUrl, content };
+ 
+    axios.post('/api/post', POST)
+    .then( response => {
+          this.props.history.push('/Dashboard');
+      });
+  
+  };
+
+
+
+
+
   render() {
     return (
       <div className="form">
@@ -20,7 +71,11 @@ class Form extends Component {
           </div>
 
           <div className="title-input">
-            <input />
+            <input 
+            className="title-input-box"
+            type="text"
+            onChange={this.handleTitleChange}
+            />
           </div>
 
           <div>
@@ -32,7 +87,11 @@ class Form extends Component {
           </div>
 
           <div className="url-input">
-            <input />
+            <input 
+            className="url-input-box"
+            type="text"
+            onChange={this.handleUrlChange}
+            />
           </div>
 
           <div>
@@ -40,11 +99,19 @@ class Form extends Component {
           </div>
 
           <div className="textarea">
-            <textarea />
+            <textarea 
+            className="content-textarea-box"
+            type="text"
+            onChange={this.handleContentChange}/>
           </div>
 
           <div>
-            <button>Post</button>
+              <Link to="/Dashboard"
+              onClick={this.createPost}
+              >
+                   Post
+            </Link>
+            
           </div>
         </div>
       </div>

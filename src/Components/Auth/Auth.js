@@ -18,6 +18,9 @@ class Auth extends Component {
     }
 
 
+
+
+
     handleUsernameChange = (e) => {
           this.setState({
               username: e.target.value
@@ -33,15 +36,6 @@ class Auth extends Component {
     }
 
 
-resetState = () => {
-    this.setState({
-        username: "",
-        password: ""
-    });
-};
-
-
-
 
 
 
@@ -55,18 +49,23 @@ createUser = () => {
     axios.post('/api/register', user)
     .then(response => {
       console.log(response.data)
-         this.props.history.push('/');
+         this.props.history.push('/Dashboard');
     });
-    this.resetState();
+  
   };
 
 
+  renderAlert = () => {
+      
+  }
 
 
 
 render(){
     return(
+        
         <div className='auth-container'>
+            {this.renderAlert()}
             <div className="auth">
                 <div className="logo">
                 <img 

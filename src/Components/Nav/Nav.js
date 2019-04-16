@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import circle from './images/circle.png';
 import dashboard from './images/dashboard.png';
 import newpost from './images/newpost.png';
@@ -8,12 +8,12 @@ import '../Nav/Nav.css';
 
 
 
-class Nav extends Component {
+export default function Nav (props) {
     
+    console.log(props.username)
 
-
-render(){
     return(
+        
         <div className="dashboard-navbar">
         
             <div className="img-1">
@@ -73,7 +73,3 @@ render(){
 
 
 
-} 
-
-
-export default Nav;
