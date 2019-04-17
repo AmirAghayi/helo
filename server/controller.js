@@ -1,6 +1,6 @@
 module.exports = {
 
-    getPosts: () => {
+    getPosts: (req,res) => {
        const {title, imageUrl, content } = req.body;
        const db = req.app.get('db')
 
@@ -34,6 +34,24 @@ module.exports = {
             res.status(200).send('Posted');
         }).catch(err => {
             console.log('newPost', err)
+        });
+
+    },
+
+    userLogin: (req,res) => {
+        const db = req.app.get('db')
+        const {username,password} = req.body;
+
+        db.user_login([username,password])
+        .then( response => {
+            console.log('sasdf', response)
+            response.length !== 0 ? 
+            res.status(200).send(response[0])
+            : 
+            res.status(500).send({error: "user does not exist!"})
+
+        }).catch(err => {
+            console.log('userLogin', err)
         });
 
     }

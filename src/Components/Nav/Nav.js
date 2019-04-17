@@ -4,11 +4,14 @@ import dashboard from './images/dashboard.png';
 import newpost from './images/newpost.png';
 import logout from './images/logout.png';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import updateUsernameType from '../../redux/reducer';
+import updateProfilePictureType from '../../redux/reducer';
 import '../Nav/Nav.css';
 
 
 
-export default function Nav (props) {
+function Nav (props) {
     
     
 
@@ -73,3 +76,19 @@ export default function Nav (props) {
 
 
 
+
+function mapStateToProps(state){
+    const { username, profilePicture } = state;
+
+    return {
+        username,
+        profilePicture
+    }
+
+}
+
+
+
+
+
+export default connect (mapStateToProps)(Nav);

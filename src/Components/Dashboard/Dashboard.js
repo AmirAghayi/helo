@@ -21,7 +21,7 @@ componentDidMount(){
 
 
 
-getposts = () => {
+getPosts = () => {
     axios.get('/api/posts')
     .then( response => {
         this.setState({
