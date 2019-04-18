@@ -6,7 +6,8 @@ module.exports = {
 
        db.get_posts([title,imageUrl,content])
        .then( response => {
-         res.status(200).send('Got All Posts');
+           console.log(response)
+         res.status(200).send(response);
        }).catch(err => {
            console.log('getPosts', err)
        });

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Post from '../Post/Post';
 import Nav from '../Nav/Nav';
 import axios from 'axios';
+import {updateUsernameType} from '../../redux/reducer';
+import {updateProfilePictureType} from '../../redux/reducer';
+import { connect } from 'react-redux';
 import './Dashboard.css';
 
 
@@ -11,12 +14,25 @@ class Dashboard extends Component {
         super();
     
         this.state = {
-          postsList: []
+          postsList: [],
+          username: '',
+          avatar: ''
         };
       }
 
-componentDidMount(){
+async componentDidMount(){
+    // todo: delete me
+    // if (!this.props.user) {
+    //     await axios.post('/api/login', {username: 'Allan', password: '7507'})
+    //     .then( response => {
+    //         console.log(response)
+    //         this.props.updateUsernameType(response.data.username);
+    //         this.props.updateProfilePictureType()
+    //     })
+    // }
+    this.setState({username: this.props.username})
       this.getPosts();
+      console.log(this.props, this.state)
 } 
 
 
@@ -45,7 +61,7 @@ render(){
     return(
         <div className="dashboard">
         
-           <Nav className="nav"/> 
+           <Nav className="nav" user={this.state.username} /> 
 
            
 
@@ -60,5 +76,17 @@ render(){
 
 } 
 
+function mapStateToProps(state) {
+const {username, profilePicture} = state;
+return {
+    username,
+    profilePicture,
+    }
+}
 
-export default Dashboard;
+
+
+
+
+
+export default connect (mapStateToProps, {updateUsernameType, updateProfilePictureType })(Dashboard);

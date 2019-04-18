@@ -4,16 +4,11 @@ import dashboard from './images/dashboard.png';
 import newpost from './images/newpost.png';
 import logout from './images/logout.png';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import updateUsernameType from '../../redux/reducer';
-import updateProfilePictureType from '../../redux/reducer';
 import '../Nav/Nav.css';
 
 
 
 function Nav (props) {
-    
-    
 
     return(
         
@@ -22,13 +17,13 @@ function Nav (props) {
             <div className="img-1">
                      <img 
                      className="profile"
-                     src={circle}
+                     src={`https://robohash.org/${props.user}`}
                      alt="profile"
                      />
             </div>
              
             <div className="username">
-                <p className="user-name">username</p>
+                <p className="user-name">{props.user}</p>
             </div>
 
             <div className='img-2'> 
@@ -77,18 +72,6 @@ function Nav (props) {
 
 
 
-function mapStateToProps(state){
-    const { username, profilePicture } = state;
-
-    return {
-        username,
-        profilePicture
-    }
-
-}
 
 
-
-
-
-export default connect (mapStateToProps)(Nav);
+export default Nav;

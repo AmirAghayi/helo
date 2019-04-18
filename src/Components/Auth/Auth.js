@@ -3,8 +3,7 @@ import logo from './images/logo.png';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import updateUsernameType from '../../redux/reducer';
-import updateProfilePictureType from '../../redux/reducer';
+import {updateUsernameType} from '../../redux/reducer';
 import "./Auth.css";
 
 
@@ -17,7 +16,8 @@ class Auth extends Component {
         this.state = {
             username: "",
             password: "",
-            error:""
+            error:"",
+            registerMessage: ""
         }
     }
 
@@ -62,6 +62,10 @@ createUser = () => {
          this.props.history.push('/');
          this.resetState();
     }); 
+    this.resetState();
+    this.setState({
+        registerMessage: "Registered Successfully!"
+    })
   } else{
       this.setState({
          error: "Username and Password Required!" 
@@ -75,22 +79,22 @@ createUser = () => {
      return this.state.username === "" || this.state.password === "" ? false : true 
   }
 
-
-
-  loginUser = () => {
-    const { username, password } = this.state;
-    const user = {
-      username,
-      password
-    };
-
-    axios.post('/api/login', user)
-    .then( response => {
-
+    
+    loginUser = () => {
+        const { username, password } = this.state;
+        const user = {
+            username,
+            password
+        };
+        axios.post('/api/login', user)
+        .then( response => {
+            this.props.updateUsernameType(response.data.username);
+        
         this.props.history.push('/Dashboard')
     }).catch(err => {
+        console.log('this is error in login user', err)
         this.setState({
-            error: err.response.data.error
+            error: err
         });
        
     });
@@ -118,7 +122,7 @@ render(){
                     <h1 className="page-title">Helo</h1>
                 </div>
 
-                {this.state.error ? <p className="error-message">{this.state.error}</p>  : null }
+                {this.state.error ? <p className="error-message">{this.state.error.data}</p>  : <p>{this.state.registerMessage}</p> }
 
 
                 <div className="username">
@@ -126,6 +130,7 @@ render(){
                     <input 
                     className="username-input"
                     type="text"
+                    value={this.state.username}
                     onChange={this.handleUsernameChange}
                     />
                 </div>
@@ -135,17 +140,18 @@ render(){
                     <input 
                     className="password-input"
                     type="text"
+                    value={this.state.password}
                     onChange={this.handlePasswordChange}
                     />
                 </div>
 
                 <div className="buttons">
-                    <Link 
+                    <button 
                     className="login-button"
                     onClick={() => this.loginUser()}
                     >
                       Login
-                    </Link>
+                    </button>
                     
                     <Link
                     className="register-button"
@@ -166,10 +172,15 @@ render(){
 
 } 
 
+function mapStateToProps(state){
+    const{UsernameType} = state;
+    return {
+        UsernameType
+    }
+}
 
 
 
 
 
-
-export default connect(null, {updateUsernameType, updateProfilePictureType })(Auth);
+export default connect(mapStateToProps, {updateUsernameType })(Auth);
