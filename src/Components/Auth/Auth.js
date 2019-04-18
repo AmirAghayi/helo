@@ -92,9 +92,9 @@ createUser = () => {
         
         this.props.history.push('/Dashboard')
     }).catch(err => {
-        console.log('this is error in login user', err)
+        console.log('this is error in login user', err.data)
         this.setState({
-            error: err
+            error: err.data
         });
        
     });

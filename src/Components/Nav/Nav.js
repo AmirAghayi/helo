@@ -26,7 +26,9 @@ function Nav (props) {
                 <p className="user-name">{props.user}</p>
             </div>
 
-            <div className='img-2'> 
+
+<div className="nav-icons">
+<div className='img-2'> 
                 <Link to="/Dashboard">
                     <img 
                     className="dashboard-home-nav"
@@ -59,6 +61,11 @@ function Nav (props) {
                </Link>
                     
            </div>
+</div>
+
+
+
+           
 
 
 
