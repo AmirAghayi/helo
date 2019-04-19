@@ -3,7 +3,7 @@ import logo from './images/logo.png';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import {updateUsernameType} from '../../redux/reducer';
+import {setUser} from '../../redux/reducer';
 import "./Auth.css";
 
 
@@ -68,7 +68,7 @@ createUser = () => {
     })
   } else{
       this.setState({
-         error: "Username and Password Required!" 
+         error: { data: "Username and Password Required!" },
   })
 }
   
@@ -87,18 +87,18 @@ createUser = () => {
             password
         };
         axios.post('/api/login', user)
-        .then( response => {
-            this.props.updateUsernameType(response.data.username);
-        
-        this.props.history.push('/Dashboard')
-    }).catch(err => {
-        console.log('this is error in login user', err)
-        this.setState({
-            error: err
-        });
-       
-    });
-  }
+            .then( response => {
+                this.props.setUser(response.data)
+            
+                this.props.history.push('/Dashboard')
+            }).catch(err => {
+                console.log('this is error in login user', err)
+                this.setState({
+                    error: err
+                });
+            
+            });
+    }
 
 
 
@@ -139,7 +139,7 @@ render(){
                     <p className="password-title">Password:</p> 
                     <input 
                     className="password-input"
-                    type="text"
+                    type="password"
                     value={this.state.password}
                     onChange={this.handlePasswordChange}
                     />
@@ -183,4 +183,4 @@ function mapStateToProps(state){
 
 
 
-export default connect(mapStateToProps, {updateUsernameType })(Auth);
+export default connect(mapStateToProps, {setUser })(Auth);

@@ -1,56 +1,27 @@
 const initialState = {
-    username: "",
-    id: "",
-    profilePicture: ""
+  user: {}
+};
+
+//action type
+const UPDATE_USER = "UPDATE_USER";
+
+//reducer
+function reducer(state = initialState, action) {
+  switch (action.type) {
+    case UPDATE_USER:
+        return Object.assign({}, state, {user: action.payload})
+
+    default:
+      return state;
+  }
 }
 
-
-const UPDATE_USERNAME_TYPE = "UPDATE_USERNAME_TYPE";
-const UPDATE_PROFILEPICTURE_TYPE = "UPDATE_PROFILEPICTURE_TYPE";
-
-
-
-
-function reducer (state=initialState, action) {
-          switch(action.type){
-              case UPDATE_USERNAME_TYPE:
-              return Object.assign({}, state, {username:action.payload});
-
-              case UPDATE_PROFILEPICTURE_TYPE:
-              return Object.assign({}, state, {profilePicture:action.payload}) 
-
-
-          default: return state;
-
-
-          }
-
-
-}
-
-
-
-export function updateUsernameType(usernameType){
+//action builders
+export function setUser(user){
     return {
-        type: UPDATE_USERNAME_TYPE,
-        payload: usernameType
+        type: UPDATE_USER,
+        payload: user
     }
 }
-
-
-export function updateProfilePictureType(ProfilePictureType){
-    return {
-        type: UPDATE_PROFILEPICTURE_TYPE,
-        payoad: ProfilePictureType
-    }
-}
-
-
-
-
-
-
-
-
 
 export default reducer;

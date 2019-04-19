@@ -37,6 +37,10 @@ app.post('/api/post', controller.newPost)
 app.get('/api/posts', controller.getPosts)
 app.post('/api/login', controller.userLogin)
 
+app.get('/api/me', (req, res) => {
+    res.send(req.user)
+})
+
 
 
 

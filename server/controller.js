@@ -4,9 +4,9 @@ module.exports = {
        const {title, imageUrl, content } = req.body;
        const db = req.app.get('db')
 
-       db.get_posts([title,imageUrl,content])
+       db.get_posts()
        .then( response => {
-           console.log(response)
+           console.log('get posts', response)
          res.status(200).send(response);
        }).catch(err => {
            console.log('getPosts', err)
@@ -20,7 +20,7 @@ module.exports = {
 
         db.create_user([username,password])
         .then(response => {
-            res.status(200).send('All Good');
+            res.status(200).send(response[0]);
         }).catch(err => {
             console.log('newUser', err)
         });
