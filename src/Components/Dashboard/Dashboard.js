@@ -4,6 +4,7 @@ import Nav from "../Nav/Nav";
 import axios from "axios";
 import { setUser } from "../../redux/reducer";
 import { connect } from "react-redux";
+import search from './images/search.png';
 import "./Dashboard.css";
 
 class Dashboard extends Component {
@@ -19,21 +20,12 @@ class Dashboard extends Component {
 
   componentWillMount() {
     axios.get("/api/me").then(response => {
-      this.props.setUser(response.data);
+    //   this.props.setUser(response.data);
     });
   }
 
   async componentDidMount() {
-    // todo: delete me
-    // if (!this.props.user) {
-    //     await axios.post('/api/login', {username: 'Allan', password: '7507'})
-    //     .then( response => {
-    //         console.log(response)
-    //         this.props.updateUsernameType(response.data.username);
-    //         this.props.updateProfilePictureType()
-    //     })
-    // }
-    this.setState({ username: this.props.username });
+    // this.setState({ username: this.props.username });
     this.getPosts();
     console.log(this.props, this.state);
   }
@@ -46,26 +38,73 @@ class Dashboard extends Component {
     });
   };
 
+
+
+
+
   render() {
+    console.log(this.props)
     const mappedPostsList = this.state.postsList.map((post, i) => {
       return <Post key={post.id} post={post} />;
     });
     return (
+        
       <div className="dashboard">
-        <Nav className="nav" user={this.state.username} />
 
-        <div />
+           
+            <div className="nav-section">
+               <Nav className="nav" user={this.props.user} />
+            </div>
+
+            <div className="dash-section">
+                <div className="search-input">
+                    <input 
+                    className="input-box"
+                    type="text"
+                    placeholder="search by Title"
+                    />
+                </div>
+
+                <div className="search-button">
+                    <button className="search-btn">
+                       <img src={search} />
+                    </button>
+                </div>
+
+                <div className="reset-button">
+                    <button
+                    className="reset-btn"
+                    >Reset</button>
+                </div>
+
+                <div className="text">
+                    <p>My Posts
+                        <input 
+                        type="checkbox"
+                        />
+                    </p> 
+                </div>
+                
+
+
+                
+            </div>
+
+
+       
 
         {mappedPostsList}
+
+
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  const { username, profilePicture } = state;
+  const { user, profilePicture } = state;
   return {
-    username,
+    user,
     profilePicture
   };
 }

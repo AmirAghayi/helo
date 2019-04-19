@@ -38,6 +38,7 @@ app.get('/api/posts', controller.getPosts)
 app.post('/api/login', controller.userLogin)
 
 app.get('/api/me', (req, res) => {
+    console.log(req.user)
     res.send(req.user)
 })
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import circle from './images/circle.png';
 import dashboard from './images/dashboard.png';
 import newpost from './images/newpost.png';
 import logout from './images/logout.png';
@@ -9,7 +8,7 @@ import '../Nav/Nav.css';
 
 
 function Nav (props) {
-
+console.log(props)
     return(
         
         <div className="dashboard-navbar">

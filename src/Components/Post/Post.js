@@ -14,13 +14,26 @@ render(){
                     {this.props.post.title}
                 </div>
 
-                <div className="post-image">
-                    <img src={this.props.post.imageurl} />
+
+                <div className="user-name-pic">
+                      <p>{this.props.user}</p>
                 </div>
+
+                <div className="profie-img">
+                     <img 
+                     className="profile"
+                     src={`https://robohash.org/${this.props.user}`}
+                     alt="profile"
+                     />
+                </div>
+
+                {/* <div className="post-image">
+                    <img src={this.props.post.imageurl} alt="profile"/>
+                </div> */}
                 
-                <div className="post-content">
+                {/* <div className="post-content">
                     {this.props.post.content}
-                </div>
+                </div> */}
                 
                 
             </div>
