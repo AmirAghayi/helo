@@ -18,14 +18,7 @@ class Dashboard extends Component {
     };
   }
 
-  componentWillMount() {
-    axios.get("/api/me").then(response => {
-    //   this.props.setUser(response.data);
-    });
-  }
-
   async componentDidMount() {
-    // this.setState({ username: this.props.username });
     this.getPosts();
     console.log(this.props, this.state);
   }
@@ -53,7 +46,7 @@ class Dashboard extends Component {
 
            
             <div className="nav-section">
-               <Nav className="nav" user={this.props.user} />
+               <Nav className="nav" />
             </div>
 
             <div className="dash-section">
@@ -109,7 +102,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  { setUser}
-)(Dashboard);
+export default connect(mapStateToProps)(Dashboard);

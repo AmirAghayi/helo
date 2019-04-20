@@ -2,13 +2,14 @@ import React from 'react';
 import dashboard from './images/dashboard.png';
 import newpost from './images/newpost.png';
 import logout from './images/logout.png';
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import '../Nav/Nav.css';
-
-
+import axios from 'axios';
+import { setUser } from '../../redux/reducer';
 
 function Nav (props) {
-console.log(props)
+    console.log(props)
     return(
         
         <div className="dashboard-navbar">
@@ -49,19 +50,23 @@ console.log(props)
             </div>
 
            <div className="img-4">
-               <Link to="/">
+                <a href="javascript:void(0)" onClick={() => {
+                    axios.get('/auth/logout')
+                        .then(() => {
+                            props.setUser('');
+                            props.history.push('/');
+                        })
+                        .catch(err => {
+                            console.warn(err);
+                        });
+                }}>
                     <img  
-                    className="logout-nav"
-                    src={logout}
-                    alt="Log Out"
-                    />
-               </Link>
+                        className="logout-nav"
+                        src={logout}
+                        alt="Log Out" />
+                </a>
                     
            </div>
-
-
-
-
         </div>
     );
 
@@ -73,4 +78,4 @@ console.log(props)
 
 
 
-export default Nav;
+export default withRouter(connect(state => state, { setUser })(Nav));

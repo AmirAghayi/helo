@@ -48,7 +48,7 @@ class Auth extends Component {
     };
     let validation = this.renderAlert();
     if (validation) {
-      axios.post("/api/register", user).then(response => {
+      axios.post("/auth/register", user).then(response => {
         console.log(response.data);
         this.props.history.push("/");
         this.resetState();
@@ -84,10 +84,10 @@ class Auth extends Component {
     };
     let validation = this.renderAlert();
     if (validation) {
-      axios.post("/api/login", user)
+      axios.post("/auth/login", user)
         .then(response => {
             console.log('response',response.data)
-          this.props.setUser(response.data.username);
+          this.props.setUser(response.data.user.username);
 
           this.props.history.push("/Dashboard");
         })
