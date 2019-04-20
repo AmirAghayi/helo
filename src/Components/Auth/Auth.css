@@ -93,9 +93,12 @@
     margin: 10px;
     padding: 5px 10px 5px 10px;
     border-radius: 2px;
-
+    font-size: 14px;
 }
 
+.login-button:hover{
+    cursor: pointer;
+}
 
 .register-button{
     color: white;

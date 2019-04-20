@@ -45,7 +45,7 @@ module.exports = {
 
         db.user_login([username,password])
         .then( response => {
-            console.log('sasdf', response)
+            console.log('userlogin-response', response)
             response.length !== 0 ? 
             res.status(200).send(response[0])
             : 
