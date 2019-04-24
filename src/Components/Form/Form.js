@@ -15,6 +15,19 @@ class Form extends Component {
          };
        }
 
+componentWillMount(){
+        axios.get('/api/me')
+        .then(response => {
+          this.props.setUser(response.data.username);
+        })
+        .catch(err => {
+          if (err.response && err.response.status == 401) {
+            return this.props.history.push('/');
+          }
+  
+          console.warn(err);
+        });
+       };
 
 
 handleTitleChange = (event) => {

@@ -14,7 +14,7 @@ class App extends Component {
       })
       .catch(err => {
         if (err.response && err.response.status == 401) {
-          this.props.history.push('/');
+          return this.props.history.push('/');
         }
 
         console.warn(err);

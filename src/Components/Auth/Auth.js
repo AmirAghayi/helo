@@ -53,7 +53,6 @@ class Auth extends Component {
         this.props.history.push("/");
         this.resetState();
       });
-      this.resetState();
       this.setState({
         registerMessage: "Registered Successfully!"
       });
@@ -92,7 +91,7 @@ class Auth extends Component {
           this.props.history.push("/Dashboard");
         })
         .catch(err => {
-          console.log("this is error in login user", err);
+          console.log("this is error in login user", err.response.data);
           this.setState({
             error: err
           });
@@ -125,6 +124,7 @@ class Auth extends Component {
             <p>{this.state.registerMessage}</p>
           )}
 
+        
           <div className="username">
             <p className="username-title">Username:</p>
             <input

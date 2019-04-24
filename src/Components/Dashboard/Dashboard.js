@@ -19,6 +19,17 @@ class Dashboard extends Component {
   }
 
   async componentDidMount() {
+    axios.get('/api/me')
+      .then(response => {
+        this.props.setUser(response.data.username);
+      })
+      .catch(err => {
+        if (err.response && err.response.status == 401) {
+          return this.props.history.push('/');
+        }
+
+        console.warn(err);
+      });
     this.getPosts();
     console.log(this.props, this.state);
   }

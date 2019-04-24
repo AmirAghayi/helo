@@ -9,9 +9,18 @@ AuthRouter.post('/register', passport.authenticate('register'), (req, res) => {
 });
 
 
-AuthRouter.post('/login', passport.authenticate('login'), (req, res) => {
+AuthRouter.post(
+    '/login',
+    passport.authenticate('login', { failWithError: true }),
+    (req, res) => {
      res.send({ message: 'Successfuly logged in ', user: req.user });
-});
+    },
+    (err, req, res, next) => {
+        if (typeof err == 'string') {
+            res.status(401).send({ message: err });
+        }
+        next(err);
+    });
 
 
 AuthRouter.get('/logout', (req, res) => {
