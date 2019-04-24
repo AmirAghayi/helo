@@ -55,6 +55,24 @@ ApiRouter.get('/me', (req, res) => {
     res.send(req.user)
 });
 
+
+ApiRouter.get('/postdetails/:id', (req, res) => {
+     const {id} = req.params;
+     const db = req.db;
+
+     db.get_post([id])
+     .then( response => {
+         res.status(200).send(response[0])
+     }).catch(err => {
+         console.log(err)
+     });
+
+
+});
+
+
+
+
 module.exports = {
     ApiRouter,
 };

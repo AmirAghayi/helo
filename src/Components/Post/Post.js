@@ -1,43 +1,58 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
+import './Post.css';
+import { Link } from 'react-router-dom';
 
 
 class Post extends Component {
-    
+    constructor (){
+       super();
+
+       this.state = {
+          title: "",
+          user: "",
+          image: ""
+       }
+
+    }
+
+
+
+
 
 
 render(){
+    console.log(this.state)
     return(
         <div>
-            <div className="posts">
-                <div className="post-title">
-                    {this.props.post.title}
+            <Link 
+            className="post-button"
+            // onClick={ () => this.getPostDetails()}
+            to={`/post/${this.props.post.id}`}
+            >
+                <div className="posts">
+                    <div className="post-title">
+                        {this.props.post.title}
+                    </div>
+
+
+                    <div className="user-name-pic">
+                        <p>{this.props.post.user.username}</p>
+                    </div>
+
+                    <div className="profie-img">
+                        <img 
+                            className="profile"
+                            src={`https://robohash.org/${this.props.post.user.username}`}
+                            alt="profile"
+                        />
+                    </div>
+
+                    
                 </div>
-
-
-                <div className="user-name-pic">
-                      <p>{this.props.post.user.username}</p>
-                </div>
-
-                <div className="profie-img">
-                    <img 
-                        className="profile"
-                        src={`https://robohash.org/${this.props.post.user.username}`}
-                        alt="profile"
-                    />
-                </div>
-
-                {/* <div className="post-image">
-                    <img src={this.props.post.imageurl} alt="profile"/>
-                </div> */}
-                
-                {/* <div className="post-content">
-                    {this.props.post.content}
-                </div> */}
-                
-                
-            </div>
             
+            </Link>
+           
         </div>
     );
 
