@@ -1,13 +1,15 @@
-.posts{
+.post{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 500px;
+    background-color: darkgray;
+
 }
 
 .post-button{
-    margin-left: 20%;
+    margin-bottom: 30px;
 }
 
 

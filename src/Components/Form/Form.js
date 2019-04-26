@@ -60,11 +60,17 @@ handleContentChange = (event) => {
     .then( response => {
           this.props.history.push('/Dashboard');
       });
-  
+     this.resetState();
   };
 
 
-
+  resetState = () => {
+    this.setState({
+      title: "",
+      imageUrl: "",
+      content: ""
+    });
+  };
 
 
   render() {
@@ -99,10 +105,17 @@ handleContentChange = (event) => {
             <p className="img-element">Image URL:</p>
           </div>
 
+          <div>
+            <img src={this.state.imageUrl}/>
+          </div>
+
+
+
           <div className="url-input">
             <input 
             className="url-input-box"
             type="text"
+            value={this.state.imageUrl}
             onChange={this.handleUrlChange}
             />
           </div>

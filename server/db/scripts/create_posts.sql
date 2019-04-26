@@ -1,4 +1,4 @@
 INSERT INTO "Posts" 
-(title, imageUrl, content)
+(title, imageUrl, content, user_id)
 VALUES
-($1, $2, $3);
+($1, $2, $3, $4);

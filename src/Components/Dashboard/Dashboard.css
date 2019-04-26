@@ -1,14 +1,27 @@
-.search-btn{
-    background-color: rgb(236, 130, 31);
+.dashboard{
+    
 }
 
 
 
 
+
+.search-btn{
+    background-color: rgb(236, 130, 31);
+}
+
+
+.posts{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10vw;
+}
+
 .dash-section{
     display: flex;
     flex-direction: row;
-    
+    width: 70%;
+    margin: 0 auto;
 }
 
 

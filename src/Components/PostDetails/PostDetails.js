@@ -33,10 +33,28 @@ class PostDetails extends Component {
 
     render(){
         return(
-            <div>
+            <div className="post-details">
 
 
-                <img src={this.state.image} />
+                <div>
+                     <h1> {this.state.title} </h1>
+                </div>
+
+                <div>
+                    <img src={this.state.image} />
+                </div>
+
+                <div>
+                    <h1>{this.state.user} </h1>
+                </div>
+
+
+                <div>
+                   <p> {this.state.content} </p>
+                </div>
+
+               
+
            </div>
         )
     }

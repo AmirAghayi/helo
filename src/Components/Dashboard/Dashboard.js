@@ -61,6 +61,9 @@ class Dashboard extends Component {
             </div>
 
             <div className="dash-section">
+
+            <div className="search-box">
+
                 <div className="search-input">
                     <input 
                     className="input-box"
@@ -81,13 +84,17 @@ class Dashboard extends Component {
                     >Reset</button>
                 </div>
 
-                <div className="text">
-                    <p>My Posts
-                        <input 
-                        type="checkbox"
-                        />
-                    </p> 
-                </div>
+            </div>
+
+               
+
+            <div className="check-box">
+                <p>My Posts
+                    <input 
+                    type="checkbox"
+                    />
+                </p> 
+            </div>
                 
 
 
@@ -95,9 +102,11 @@ class Dashboard extends Component {
             </div>
 
 
-       
+            <div className="posts">
+                {mappedPostsList}
+            </div>
 
-        {mappedPostsList}
+        
 
 
       </div>

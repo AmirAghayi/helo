@@ -5,32 +5,27 @@ import { Link } from 'react-router-dom';
 
 
 class Post extends Component {
-    constructor (){
-       super();
+    constructor() {
+        super();
 
-       this.state = {
-          title: "",
-          user: "",
-          image: ""
-       }
+        this.state = {
+            title: "",
+            user: "",
+            image: ""
+        }
 
     }
 
 
 
-
-
-
-render(){
-    console.log(this.state)
-    return(
-        <div>
-            <Link 
-            className="post-button"
-            // onClick={ () => this.getPostDetails()}
-            to={`/post/${this.props.post.id}`}
+    render() {
+        console.log(this.state)
+        return (
+            <Link
+                className="post-button post"
+                // onClick={ () => this.getPostDetails()}
+                to={`/post/${this.props.post.id}`}
             >
-                <div className="posts">
                     <div className="post-title">
                         {this.props.post.title}
                     </div>
@@ -41,27 +36,22 @@ render(){
                     </div>
 
                     <div className="profie-img">
-                        <img 
+                        <img
                             className="profile"
                             src={`https://robohash.org/${this.props.post.user.username}`}
                             alt="profile"
                         />
                     </div>
 
-                    
-                </div>
-            
             </Link>
-           
-        </div>
-    );
+        );
+
+
+    }
+
 
 
 }
-
-
-
-} 
 
 
 export default Post;
