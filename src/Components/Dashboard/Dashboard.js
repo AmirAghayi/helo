@@ -7,6 +7,10 @@ import { connect } from "react-redux";
 import search from './images/search.png';
 import "./Dashboard.css";
 
+
+
+
+
 class Dashboard extends Component {
   constructor() {
     super();
@@ -43,8 +47,6 @@ class Dashboard extends Component {
 
 
 
-
-
   render() {
     const mappedPostsList = this.state.postsList.map((post, i) => {
       return <Post key={post.id} post={post} />;
@@ -71,7 +73,9 @@ class Dashboard extends Component {
                                     </div>
 
                                       <div className="search-button">
-                                          <button className="search-btn">
+                                          <button 
+                                          className="search-btn"
+                                          >
                                             <img src={search} className="search-btn-sign"/>
                                           </button>
                                       </div>
