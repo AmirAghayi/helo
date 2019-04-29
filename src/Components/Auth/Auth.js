@@ -49,9 +49,11 @@ class Auth extends Component {
     let validation = this.renderAlert();
     if (validation) {
       axios.post("/auth/register", user).then(response => {
+        console.log(response.data);
         this.props.history.push("/");
         this.resetState();
       });
+      this.resetState();
       this.setState({
         registerMessage: "Registered Successfully!"
       });
@@ -84,12 +86,13 @@ class Auth extends Component {
     if (validation) {
       axios.post("/auth/login", user)
         .then(response => {
+            console.log('response',response.data)
           this.props.setUser(response.data.user.username);
 
           this.props.history.push("/Dashboard");
         })
         .catch(err => {
-          console.log("this is error in login user", err.response.data);
+          console.log("this is error in login user", err);
           this.setState({
             error: err
           });
@@ -109,11 +112,11 @@ class Auth extends Component {
       <div className="auth-container">
         <div className="auth">
           <div className="logo">
-            <img className="img" src={logo} alt="logo" />
+            <img  src={logo} alt="logo" />
           </div>
 
           <div className="title">
-            <h1 className="page-title">Helo</h1>
+            <h1>Helo</h1>
           </div>
 
           {this.state.error ? (
@@ -122,7 +125,6 @@ class Auth extends Component {
             <p>{this.state.registerMessage}</p>
           )}
 
-        
           <div className="username">
             <p className="username-title">Username:</p>
             <input
