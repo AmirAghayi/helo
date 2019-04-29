@@ -3,9 +3,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 500px;
+    width: 86%;
     background-color: darkgray;
-
+    text-decoration: none;
+    color: black;
+    box-shadow: 2px 0px 5px rgba(0,0,0, 0.5);
 }
 
 .post-button{
@@ -15,4 +17,16 @@
 
 .post-button:hover{
     cursor: pointer;
+}
+
+
+.post-username-image{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.post-title{
+ font-weight: bold;
+ padding-left: 30px;    
 }

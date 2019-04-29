@@ -3,6 +3,7 @@ import Nav from "../Nav/Nav";
 import { Link } from 'react-router-dom';
 import './Form.css';
 import axios from "axios";
+import emptyImage from '../Form/images/empty-image.png';
 
 class Form extends Component {
        constructor(){
@@ -81,64 +82,51 @@ handleContentChange = (event) => {
         </div>
 
         <div className="form-section">
-          <div className="-page-title">
+          <div className="page-title">
             <h1 className="title">New Post</h1>
           </div>
 
           <div className="element-1">
-            <p className="title-element">Title:</p>
+              <p className="title-element">Title:</p>
+              <input 
+              className="title-input-box"
+              type="text"
+              onChange={this.handleTitleChange}
+              />
           </div>
 
-          <div className="title-input">
-            <input 
-            className="title-input-box"
-            type="text"
-            onChange={this.handleTitleChange}
+          <div className="image">
+            <img
+            className="img" 
+            alt="profile"
+            src={!this.state.imageUrl ? emptyImage  : this.state.imageUrl}
             />
-          </div>
-
-          <div>
-            <img alt="profile" />
           </div>
 
           <div className="element-2">
-            <p className="img-element">Image URL:</p>
-          </div>
-
-          <div>
-            <img src={this.state.imageUrl}/>
-          </div>
-
-
-
-          <div className="url-input">
-            <input 
-            className="url-input-box"
-            type="text"
-            value={this.state.imageUrl}
-            onChange={this.handleUrlChange}
-            />
-          </div>
-
-          <div>
-            <p>Content:</p>
+              <p className="img-element">Image URL:</p>
+              <input 
+              className="url-input-box"
+              type="text"
+              value={this.state.imageUrl}
+              onChange={this.handleUrlChange}
+              />
           </div>
 
           <div className="textarea">
-            <textarea 
-            className="content-textarea-box"
-            type="text"
-            onChange={this.handleContentChange}/>
+              <p>Content:</p>
+              <textarea 
+              className="content-textarea-box"
+              type="text"
+              onChange={this.handleContentChange}/>
           </div>
 
-          <div>
-              <Link to="/Dashboard"
-              onClick={this.createPost}
-              >
-                   Post
-            </Link>
-            
-          </div>
+             <div className="Post-button-section">
+                <Link to="/Dashboard"
+                onClick={this.createPost}
+                > <button className="post-btn">Post</button>
+                 </Link>
+             </div>
         </div>
       </div>
     );

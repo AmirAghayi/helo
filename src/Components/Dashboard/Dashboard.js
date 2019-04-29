@@ -31,7 +31,6 @@ class Dashboard extends Component {
         console.warn(err);
       });
     this.getPosts();
-    console.log(this.props, this.state);
   }
 
   getPosts = () => {
@@ -47,7 +46,6 @@ class Dashboard extends Component {
 
 
   render() {
-    console.log(this.props)
     const mappedPostsList = this.state.postsList.map((post, i) => {
       return <Post key={post.id} post={post} />;
     });
@@ -56,55 +54,65 @@ class Dashboard extends Component {
       <div className="dashboard">
 
            
-            <div className="nav-section">
-               <Nav className="nav" />
-            </div>
+                          <div className="nav-section">
+                            <Nav className="nav" />
+                          </div>
 
-            <div className="dash-section">
+              <div className="dash-section">
 
-            <div className="search-box">
+                        <div className="search-box">
+                              <div className="search-section"> 
+                                    <div className="search-input">
+                                        <input 
+                                        className="input-box"
+                                        type="text"
+                                        placeholder="search by Title"
+                                        />
+                                    </div>
 
-                <div className="search-input">
-                    <input 
-                    className="input-box"
-                    type="text"
-                    placeholder="search by Title"
-                    />
-                </div>
+                                      <div className="search-button">
+                                          <button className="search-btn">
+                                            <img src={search} className="search-btn-sign"/>
+                                          </button>
+                                      </div>
 
-                <div className="search-button">
-                    <button className="search-btn">
-                       <img src={search} />
-                    </button>
-                </div>
+                                      <div className="reset-button">
+                                          <button
+                                          className="reset-btn"
+                                          >Reset</button>
+                                      </div>
+                                
+                                </div>
 
-                <div className="reset-button">
-                    <button
-                    className="reset-btn"
-                    >Reset</button>
-                </div>
 
-            </div>
+                          <div className="check-Myposts">
+                              <div className="check-box">
+                                  <p>My Posts
+                                      <input 
+                                      type="checkbox"
+                                      />
+                                  </p> 
+                              </div>
+                          </div>
 
-               
+                            
 
-            <div className="check-box">
-                <p>My Posts
-                    <input 
-                    type="checkbox"
-                    />
-                </p> 
-            </div>
+                            
+                        </div>
+
+                          
+
+                        
                 
 
 
+                        <div className="posts">
+                              {mappedPostsList}
+                        </div>
                 
             </div>
 
 
-            <div className="posts">
-                {mappedPostsList}
-            </div>
 
         
 

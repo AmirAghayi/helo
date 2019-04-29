@@ -9,7 +9,6 @@ import axios from 'axios';
 import { setUser } from '../../redux/reducer';
 
 function Nav (props) {
-    console.log(props)
     return(
         
         <div className="dashboard-navbar">

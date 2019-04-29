@@ -18,7 +18,6 @@ class Post extends Component {
 
 
     render() {
-        console.log(this.state)
         return (
             <Link
                 className="post-button post"
@@ -31,7 +30,7 @@ class Post extends Component {
                         {this.props.post.title}
                     </div>
 
-
+           <div className="post-username-image"> 
                     <div className="user-name-pic">
                         <p>{this.props.post.user.username}</p>
                     </div>
@@ -43,6 +42,8 @@ class Post extends Component {
                             alt="profile"
                         />
                     </div>
+          </div>
+                    
 
             </Link>
         );

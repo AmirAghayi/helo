@@ -1,6 +1,6 @@
 .form{
     display: flex;
-    justify-content: space-between;
+    
 }
 
 
@@ -8,12 +8,69 @@
     display: flex;
     flex-direction: column;
     background-color: white;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 100px 0px 100px;
-    margin: 100px 100px 100px 0px;
+    align-items: initial;
+    padding: 0px 100px 0px 40px;
+    margin: 30px 80px 100px 200px;
     width: 800px;
     border-style: solid;
-    box-shadow: 10px 20px 50px 5px grey;
     border-color: white;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);  
+}
+
+.page-title{
+    color: rgb(255, 123, 0);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.element-1{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.image{
+display: flex;
+flex-direction: column;
+align-items: center; 
+}
+
+.img {
+    height: 300px;
+    width: 300px;
+    padding-top: 20px;
+}
+
+.element-2{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.textarea {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.content-textarea-box{
+    height: 70px;
+}
+
+
+.Post-button-section {
+    padding: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+.post-btn {
+    color: white;
+    background-color: rgb(63, 63, 63);
+    border: none;
+    font-size: 14px;
+    height: 25px;
+    width: 50px;
+    
 }

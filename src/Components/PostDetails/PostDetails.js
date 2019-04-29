@@ -20,7 +20,6 @@ class PostDetails extends Component {
     componentWillMount = () => {
         axios.get(`/api/postdetails/${this.props.match.params.id}`)
         .then( response => {
-            console.log(response)
              this.setState({
                  title: response.data.title,
                  user: response.data.user,
@@ -54,23 +53,24 @@ class PostDetails extends Component {
                     </div>
                     
                     <div className="content">
-                            <div className="post-content">
+                            <div className="post-username-section">  
+                                    <div className="post-username">
+                                        <p> by </p>
+                                    </div>
+                                    <p> {this.state.user} </p>
+                                    <img 
+                                    className="profile"
+                                    src={`https://robohash.org/${this.props.user}`}
+                                    alt="profile"
+                                    />
+                           </div>
+
+                           <div className="post-content">
                                     <p> {this.state.content} </p>
                             </div> 
                     </div>
 
-                    <div className="post-username">  
-                            <div className="post-username">
-                                <p> by  </p>
-                            </div>
-
-                            <img 
-                            className="profile"
-                            src={`https://robohash.org/${this.props.user}`}
-                            alt="profile"
-                            />
-                            <p> {this.state.user} </p>
-                     </div>
+                    
                     
                 </div>
                                 

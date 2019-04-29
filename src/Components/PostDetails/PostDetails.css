@@ -1,15 +1,37 @@
 .post-details{
     display: flex;
+    background-color: white;
 }
 
 
 .post-details-section{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 80px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);  
 }
 
 .title-and-image {
     display: flex;
     flex-direction: column;
+    padding-left: 5%;
 }
 
+.post-image {
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.8); 
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.post-username-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
