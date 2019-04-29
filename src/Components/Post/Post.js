@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './Post.css';
 import { Link } from 'react-router-dom';
 
@@ -26,6 +25,8 @@ class Post extends Component {
                 // onClick={ () => this.getPostDetails()}
                 to={`/post/${this.props.post.id}`}
             >
+
+                    
                     <div className="post-title">
                         {this.props.post.title}
                     </div>

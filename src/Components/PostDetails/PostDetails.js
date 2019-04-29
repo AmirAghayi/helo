@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import Nav from '../Nav/Nav';
 import axios from 'axios';
+import './PostDetails.css';
 
 
 class PostDetails extends Component {
@@ -36,22 +38,42 @@ class PostDetails extends Component {
             <div className="post-details">
 
 
-                <div>
-                     <h1> {this.state.title} </h1>
+                <div className="nav-section">
+                     <Nav className="Nav" />
                 </div>
+  
+                <div className="post-details-section">
+                    <div className="title-and-image">
+                        <div className="post-title">
+                            <h1> {this.state.title} </h1>
+                        </div>
 
-                <div>
-                    <img src={this.state.image} />
+                        <div className="post-image">
+                            <img src={this.state.image} />
+                        </div>
+                    </div>
+                    
+                    <div className="content">
+                            <div className="post-content">
+                                    <p> {this.state.content} </p>
+                            </div> 
+                    </div>
+
+                    <div className="post-username">  
+                            <div className="post-username">
+                                <p> by  </p>
+                            </div>
+
+                            <img 
+                            className="profile"
+                            src={`https://robohash.org/${this.props.user}`}
+                            alt="profile"
+                            />
+                            <p> {this.state.user} </p>
+                     </div>
+                    
                 </div>
-
-                <div>
-                    <h1>{this.state.user} </h1>
-                </div>
-
-
-                <div>
-                   <p> {this.state.content} </p>
-                </div>
+                                
 
                
 

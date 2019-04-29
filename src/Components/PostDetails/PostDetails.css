@@ -1,0 +1,15 @@
+.post-details{
+    display: flex;
+}
+
+
+.post-details-section{
+    display: flex;
+}
+
+.title-and-image {
+    display: flex;
+    flex-direction: column;
+}
+
+
