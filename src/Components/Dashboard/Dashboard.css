@@ -1,5 +1,14 @@
+.dashboard {
+    background-color: #d4d2d2;
+    margin: 0px 20% 0px 20%;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+}
 
-
+.nav-section {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
 
 .search-box{
     display: flex;
@@ -7,9 +16,10 @@
     justify-content: space-between;
     align-items: center;
     background-color: darkgray;
-    margin: 30px;
-    width: 67%;
-    margin-left: 87px;
+    margin: 20px 30% 30px 10%;
+    border-style: outset;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+    width: 77%;
 }
 
 
@@ -65,7 +75,7 @@
     flex-direction: column;
     align-items: center;
     width: 67%;
-    padding-left: 5%;
+    padding-left: 15%;
 }
 
 .dash-section{
