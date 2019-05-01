@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 80px;
+    margin: 5% 15%;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);  
 }
 
@@ -18,9 +18,6 @@
     padding-left: 5%;
 }
 
-.post-image {
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.8); 
-}
 
 
 .content {
@@ -35,3 +32,13 @@
     align-items: center;
 }
 
+.img-file {
+    height: 500px;
+    margin: 20px 20px 40px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.8);
+}
+
+.poster {
+    font-weight: bold;
+    margin-left: 4px; 
+}

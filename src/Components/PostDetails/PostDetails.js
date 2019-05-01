@@ -48,7 +48,9 @@ class PostDetails extends Component {
                         </div>
 
                         <div className="post-image">
-                            <img src={this.state.image} />
+                            <img 
+                            className="img-file"
+                            src={this.state.image} />
                         </div>
                     </div>
                     
@@ -57,7 +59,7 @@ class PostDetails extends Component {
                                     <div className="post-username">
                                         <p> by </p>
                                     </div>
-                                    <p> {this.state.user} </p>
+                                    <p className="poster"> {this.state.user} </p>
                                     <img 
                                     className="profile"
                                     src={`https://robohash.org/${this.props.user}`}
