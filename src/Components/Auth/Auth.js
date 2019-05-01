@@ -46,6 +46,9 @@ class Auth extends Component {
       username,
       password
     };
+    this.setState({
+      error: ""
+    });
     let validation = this.renderAlert();
     if (validation) {
       axios.post("/auth/register", user).then(response => {
@@ -82,6 +85,9 @@ class Auth extends Component {
       username,
       password
     };
+    this.setState({
+      error: ""
+    });
     let validation = this.renderAlert();
     if (validation) {
       axios.post("/auth/login", user)
@@ -94,7 +100,7 @@ class Auth extends Component {
         .catch(err => {
           console.log("this is error in login user", err);
           this.setState({
-            error: err
+            error: {data:err.response.data.message}
           });
         });
     } else {

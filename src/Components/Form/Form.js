@@ -122,10 +122,9 @@ handleContentChange = (event) => {
           </div>
 
              <div className="Post-button-section">
-                <Link to="/Dashboard"
+                <button 
                 onClick={this.createPost}
-                > <button className="post-btn">Post</button>
-                 </Link>
+                className="post-btn">Post</button>
              </div>
         </div>
       </div>
